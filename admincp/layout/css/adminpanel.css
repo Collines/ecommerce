@@ -1,0 +1,38 @@
+/*  General     */
+
+body {
+    background-color:#F4F4F4;
+}
+
+/*  General End     */
+/*  Start Login Form */
+.admin-cp-login {
+    width:50%;
+    margin:100px auto;
+    padding:30px;
+    background:#e6e6e6;
+    border-radius: 10px;
+}
+
+.admin-cp-login fieldset {
+    padding:20px 70px;
+    padding-bottom: 0px;
+    border:1.5px solid rgba(0,0,0,0.35);
+}
+
+.admin-cp-login fieldset legend {
+    width:auto;
+    border:1.5px solid rgba(0,0,0,0.35);
+    padding:8px 20px;
+    color:#696b71;
+}
+
+.admin-cp-login input:not(:first-child) {
+    margin:20px 0;
+}
+
+.admin-cp-login input[type='submit'] {
+    margin:50px 0;
+}
+
+/*  Start Login Form */
