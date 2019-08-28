@@ -16,25 +16,31 @@
         // check if the user exist in database
         $stmt = $con->prepare("SELECT username, password, groupID FROM users WHERE username = ? AND password = ?;");
         $stmt->execute(array($username, $hashedPassword));
+        $output = $stmt->fetch();
+        $groupID = $output[2];
         $count = $stmt->rowCount();
         if($count) {
-            $_SESSION['Username'] = $username;
-            echo "<div class='alert-success text-center'></div>";
-            outputMessage('success', "You've logged in! directing...");
-            header( "refresh:3;url=dashboard.php" );
-            exit();
-        } else {
-            outputMessage("error", "Your account doesn't exist in our Database");
+            if($groupID == 3 ) { // if user account is administrator
+                $_SESSION['Username'] = $username;
+                outputMessage('success', lang('ADMIN_LOGIN_SUCCESS'));
+                header("refresh:3;url=dashboard.php");
+                exit();
+            } else {
+                outputMessage('warning', lang('ADMIN_NOT_AUTH_LOGIN'));
+            }
+        }
+        else {
+            outputMessage("error", lang("ADMIN_USER_NOT_EXIST"));
         }
     }
 
 ?>
 <form class="admin-cp-login" autocomplete="off" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
     <fieldset class="text-center">
-        <legend>Administration Login</legend>
-        <input class="form-control" type="text" name="username" placeholder="Username" autocomplete="off"/>
-        <input class="form-control" type="password" name="password" placeholder="Password" autocomplete="new-password"/>
-        <input class="btn btn-block btn-primary" type="submit" value="Login"/>
+        <legend><?php echo lang("ADMIN_LOGIN"); ?></legend>
+        <input class="form-control" type="text" name="username" placeholder="<?php echo lang('USERNAME')?>" dir="auto" autocomplete="off"/>
+        <input class="form-control" type="password" name="password" placeholder="<?php echo lang('PASSWORD')?>" dir="auto" autocomplete="new-password"/>
+        <input class="btn btn-block btn-primary" type="submit" value="<?php echo lang('LOGIN')?>""/>
     </fieldset>
 </form>
 <?php

@@ -5,6 +5,7 @@ body {
 }
 
 /*  General End     */
+
 /*  Start Login Form */
 .admin-cp-login {
     width:50%;
@@ -36,3 +37,29 @@ body {
 }
 
 /*  Start Login Form */
+
+/*  Admin Navbar Start */
+
+.admin-navbar .navbar-brand {
+    margin-right:70px;
+}
+
+.admin-navbar.navbar-dark .navbar-nav .nav-item {
+    padding:0 10px;
+}
+
+.admin-navbar.navbar-dark .navbar-nav .nav-link{
+    transition:all .5s ease-in-out;
+    letter-spacing: 1.2px;
+}
+
+.admin-navbar .navbar-nav .nav-item {
+    
+}
+
+.admin-navbar.navbar-dark .navbar-nav .nav-link:hover {
+    background:#4e4e4e;
+}
+
+
+/*  Admin Navbar End    */
