@@ -3,12 +3,13 @@
         static $lang = array(
             // Admin panel
             "ADMIN_LOGO" => "Administration Control Panel",
+            "ADMIN_CP_LOGIN" => "Admin Control Panel Login",
             "ADMIN_WELCOME" => "Welcome back, ",
+            "ADMIN_DASHBOARD" => "Admin Dashboard",
             "ADMIN_LOGIN" => "Administration Login",
             "ADMIN_LOGIN_SUCCESS" => "You've logged in! directing...",
             "ADMIN_NOT_AUTH_LOGIN" => "You're not authorized to use Admin Control Panel as you're not administrator",
             "ADMIN_USER_NOT_EXIST" => "Your account doesn't exist in our Database",
-//            "ADMIN_HOME" => "Home",
             "ADMIN_CATEGORIES" => "Categories",
             "ADMIN_ITEMS" => "Items",
             "ADMIN_MEMBERS" => "Members",

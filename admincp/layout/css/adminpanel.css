@@ -4,6 +4,15 @@ body {
     background-color:#F4F4F4;
 }
 
+.asterisk {
+    color: red;
+    font-size: 1.5em;
+    position: absolute;
+    top: 50%;
+    margin-top: -16px;
+    right: 50px;
+}
+
 /*  General End     */
 
 /*  Start Login Form */
@@ -53,13 +62,14 @@ body {
     letter-spacing: 1.2px;
 }
 
-.admin-navbar .navbar-nav .nav-item {
-    
-}
-
 .admin-navbar.navbar-dark .navbar-nav .nav-link:hover {
     background:#4e4e4e;
 }
 
 
 /*  Admin Navbar End    */
+
+/* Admin User Edit Start */
+
+
+/* Admin User Edit End */

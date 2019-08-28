@@ -7,3 +7,12 @@
         );
         echo $output[$type];
     }
+
+    function getPageTitle() {
+        global $pageTitle;
+        if(isset($pageTitle)) {
+            echo $pageTitle;
+        } else {
+            echo "Dafault";
+        }
+    }

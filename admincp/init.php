@@ -5,12 +5,13 @@
     $js = "layout/js/";     // Javascript Directory
     $css = "layout/css/";       // CSS Directory
     $languages = "includes/languages/";     // Languages Directory
-    $funct = "includes/functions/";      // Functions Directory
+    $funct = "includes/functions/";     // Languages Directory
 
     // include important files
     include $languages . "english.php";
+    include $funct . "functions.php";
     include $tpl . "header.inc";
     // To Put navbar in specific pages
-    if(!isset($noNavBar)) {
-        include $tpl . "navbar.inc";
+    function addNavBar() {
+        include "includes/templates/navbar.inc";
     }

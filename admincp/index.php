@@ -1,12 +1,11 @@
 <?php
-    $noNavBar = '';
-    include "init.php";
-    include $funct . "functions.php";
+
     session_start();
     if(isset($_SESSION['Username'])) {
         header( "Location:dashboard.php" );
     }
-
+    $pageTitle = "Admin Control Panel Login"; //lang("ADMIN_CP_LOGIN");
+    include "init.php";
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
         $username = $_POST['username'];
         $password = $_POST['password'];
@@ -14,16 +13,18 @@
         $hashedPassword = sha1($password);
 //        echo password_verify($password, $hashedPassword);
         // check if the user exist in database
-        $stmt = $con->prepare("SELECT username, password, groupID FROM users WHERE username = ? AND password = ?;");
+        $stmt = $con->prepare("SELECT userID, username, password, groupID FROM users WHERE username = ? AND password = ?;");
         $stmt->execute(array($username, $hashedPassword));
         $output = $stmt->fetch();
-        $groupID = $output[2];
+        $userID = $output[0];
+        $groupID = $output[3];
         $count = $stmt->rowCount();
         if($count) {
             if($groupID == 3 ) { // if user account is administrator
                 $_SESSION['Username'] = $username;
+                $_SESSION['UserID'] = $userID;
                 outputMessage('success', lang('ADMIN_LOGIN_SUCCESS'));
-                header("refresh:3;url=dashboard.php");
+                header("refresh:1.5;url=dashboard.php");
                 exit();
             } else {
                 outputMessage('warning', lang('ADMIN_NOT_AUTH_LOGIN'));

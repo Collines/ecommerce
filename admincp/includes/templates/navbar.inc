@@ -1,5 +1,5 @@
 <nav class="admin-navbar navbar navbar-expand-lg bg-dark navbar-dark">
-    <a class="navbar-brand ml-lg-5" href="#"><?php echo lang("ADMIN_LOGO")?></a>
+    <a class="navbar-brand ml-lg-5" href="index.php"><?php echo lang("ADMIN_LOGO")?></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#admincp-navbar" aria-controls="admincp-navbar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -16,7 +16,7 @@
                 <a class="nav-link" href="#"><?php echo lang("ADMIN_ITEMS")?></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><?php echo lang("ADMIN_MEMBERS")?></a>
+                <a class="nav-link" href="members.php"><?php echo lang("ADMIN_MEMBERS")?></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#"><?php echo lang("ADMIN_STATISTICS")?></a>
@@ -31,10 +31,10 @@
                     <?php echo $_SESSION['Username'] ?>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="members.php?do=edit&UserID=<?php echo $_SESSION['UserID'];?>">Edit Profile</a>
                     <a class="dropdown-item" href="#"><?php echo lang("SETTINGS")?></a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#"><?php echo lang("LOGOUT")?></a>
+                    <a class="dropdown-item" href="logout.php"><?php echo lang("LOGOUT")?></a>
                 </div>
             </li>
         </ul>
