@@ -1,48 +1,48 @@
 /*  General     */
 
 body {
-    background-color:#F4F4F4;
+  background-color: #f4f4f4;
 }
 
 .asterisk {
-    color: red;
-    font-size: 1.5em;
-    position: absolute;
-    top: 50%;
-    margin-top: -16px;
-    right: 50px;
+  color: red;
+  font-size: 1.5em;
+  position: absolute;
+  top: 50%;
+  margin-top: -16px;
+  right: 50px;
 }
 
 /*  General End     */
 
 /*  Start Login Form */
 .admin-cp-login {
-    width:50%;
-    margin:100px auto;
-    padding:30px;
-    background:#e6e6e6;
-    border-radius: 10px;
+  width: 50%;
+  margin: 100px auto;
+  padding: 30px;
+  background: #e6e6e6;
+  border-radius: 10px;
 }
 
 .admin-cp-login fieldset {
-    padding:20px 70px;
-    padding-bottom: 0px;
-    border:1.5px solid rgba(0,0,0,0.35);
+  padding: 20px 70px;
+  padding-bottom: 0px;
+  border: 1.5px solid rgba(0, 0, 0, 0.35);
 }
 
 .admin-cp-login fieldset legend {
-    width:auto;
-    border:1.5px solid rgba(0,0,0,0.35);
-    padding:8px 20px;
-    color:#696b71;
+  width: auto;
+  border: 1.5px solid rgba(0, 0, 0, 0.35);
+  padding: 8px 20px;
+  color: #696b71;
 }
 
 .admin-cp-login input:not(:first-child) {
-    margin:20px 0;
+  margin: 20px 0;
 }
 
-.admin-cp-login input[type='submit'] {
-    margin:50px 0;
+.admin-cp-login input[type="submit"] {
+  margin: 50px 0;
 }
 
 /*  Start Login Form */
@@ -50,26 +50,134 @@ body {
 /*  Admin Navbar Start */
 
 .admin-navbar .navbar-brand {
-    margin-right:70px;
+  margin-right: 70px;
 }
 
 .admin-navbar.navbar-dark .navbar-nav .nav-item {
-    padding:0 10px;
+  padding: 0 10px;
 }
 
-.admin-navbar.navbar-dark .navbar-nav .nav-link{
-    transition:all .5s ease-in-out;
-    letter-spacing: 1.2px;
+.admin-navbar.navbar-dark .navbar-nav .nav-link {
+  transition: all 0.5s ease-in-out;
+  letter-spacing: 1.2px;
 }
 
 .admin-navbar.navbar-dark .navbar-nav .nav-link:hover {
-    background:#4e4e4e;
+  background: #4e4e4e;
 }
-
 
 /*  Admin Navbar End    */
 
-/* Admin User Edit Start */
+/*  Dashboard Start */
 
+.dashboard-statistics .stat {
+  padding: 20px;
+  font-size: 18px;
+  color: #fff;
+  border-radius:5px;
+}
 
-/* Admin User Edit End */
+.dashboard-statistics a:hover {
+  text-decoration: none!important;
+}
+
+.dashboard-statistics .stat span {
+  display: block;
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+.dashboard-statistics .stat.total-members {
+  background: #2980b9;
+}
+
+.dashboard-statistics .stat.pending-members {
+  background: #d35400;
+}
+
+.dashboard-statistics .stat.total-items {
+  background: #c0392b;
+}
+
+.dashboard-statistics .stat.total-categories {
+  background: #27ae60;
+}
+
+.dashboard.card .card-body {
+  padding:0;
+}
+
+.latest-user {
+  margin:0;
+  padding:10px 0;
+}
+
+.latest-user:nth-of-type(odd) {
+  background:rgba(0,0,0,.05);
+}
+
+/*  Dashboard End */
+
+/* Admin manage Start */
+
+.table-responsive {
+  -webkit-box-shadow: 0px 15px 16px -9px rgba(0, 0, 0, 0.57);
+  -moz-box-shadow: 0px 15px 16px -9px rgba(0, 0, 0, 0.57);
+  box-shadow: 0px 15px 16px -9px rgba(0, 0, 0, 0.57);
+}
+
+.table-responsive td {
+  vertical-align: middle;
+}
+
+.container-fluid.members-table {
+  padding:0 40px;
+}
+
+.users-table {
+  margin-bottom:0;
+}
+
+.users-table tr:first-child,
+.users-table tr:first-child:hover {
+  background: #343a40 !important;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.delete-confirmation, .activate-confirmation {
+  display: block !important;
+  top: 50%;
+  left: 50%;
+  margin-left: -300px;
+  margin-top: -265px;
+  height: 530px;
+  width: 600px;
+  z-index: 1050;
+  overflow: hidden;
+  outline: 0;
+}
+
+.administrator-rank {
+  color: red;
+  text-shadow: 0px 2px 13px rgba(206,0,0,0.85);
+}
+
+.moderator-rank {
+  color: green;
+  text-shadow: 0px 2px 13px rgba(0,128,0,0.85);
+}
+
+.user-rank {
+  color: blue;
+  text-shadow: 0px 2px 13px rgba(0,0,255,0.85);
+}
+
+.banned-rank {
+  color: grey;
+  text-decoration: line-through;
+}
+
+/* Admin manage End */

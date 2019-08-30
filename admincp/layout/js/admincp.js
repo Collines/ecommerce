@@ -18,4 +18,9 @@ $(document).ready(function () {
             $(this).after('<span class="asterisk">*</span>');
         }
     });
+
+    // add active class on current page
+    $('.nav-item').on('click', function(){
+        $(this).addClass('active').siblings().removeClass('active');
+    });
 });

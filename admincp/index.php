@@ -1,5 +1,5 @@
 <?php
-
+    ob_start();
     session_start();
     if(isset($_SESSION['Username'])) {
         header( "Location:dashboard.php" );
@@ -23,9 +23,7 @@
             if($groupID == 3 ) { // if user account is administrator
                 $_SESSION['Username'] = $username;
                 $_SESSION['UserID'] = $userID;
-                outputMessage('success', lang('ADMIN_LOGIN_SUCCESS'));
-                header("refresh:1.5;url=dashboard.php");
-                exit();
+                redirectPage(lang('ADMIN_LOGIN_SUCCESS'),"success", "dashboard.php",1.5);
             } else {
                 outputMessage('warning', lang('ADMIN_NOT_AUTH_LOGIN'));
             }
@@ -46,4 +44,5 @@
 </form>
 <?php
     include $tpl . "footer.inc";
+    ob_end_flush();
 ?>
