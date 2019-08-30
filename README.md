@@ -10,5 +10,8 @@ My First coded full site (front & back) ends
 - PHP
 - MySQL
 
+## Live Demo based on latest commit (updated on new commits)
+http://ecommerce-site.byethost4.com/admincp
 
+---
 more to be added..
