@@ -3,6 +3,7 @@
     session_start();
     if(isset($_SESSION['Username'])) {
         header( "Location:dashboard.php" );
+        exit();
     }
     $pageTitle = "Admin Control Panel Login"; //lang("ADMIN_CP_LOGIN");
     include "init.php";
@@ -34,14 +35,18 @@
     }
 
 ?>
-<form class="admin-cp-login" autocomplete="off" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
-    <fieldset class="text-center">
-        <legend><?php echo lang("ADMIN_LOGIN"); ?></legend>
-        <input class="form-control" type="text" name="username" placeholder="<?php echo lang('USERNAME')?>" dir="auto" autocomplete="off"/>
-        <input class="form-control" type="password" name="password" placeholder="<?php echo lang('PASSWORD')?>" dir="auto" autocomplete="new-password"/>
-        <input class="btn btn-block btn-primary" type="submit" value="<?php echo lang('LOGIN')?>""/>
-    </fieldset>
-</form>
+<div class="container">
+    <div class="row">
+        <form class="admin-cp-login offset-md-2 col-md-8 col-12" autocomplete="off" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
+            <fieldset class="text-center">
+                <legend><?php echo lang("ADMIN_LOGIN"); ?></legend>
+                <input class="form-control" type="text" name="username" placeholder="<?php echo lang('USERNAME')?>" dir="auto" autocomplete="off"/>
+                <input class="form-control" type="password" name="password" placeholder="<?php echo lang('PASSWORD')?>" dir="auto" autocomplete="new-password"/>
+                <input class="btn btn-block btn-primary" type="submit" value="<?php echo lang('LOGIN')?>""/>
+            </fieldset>
+        </form>
+    </div>
+</div>
 <?php
     include $tpl . "footer.inc";
     ob_end_flush();

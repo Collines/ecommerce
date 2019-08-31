@@ -14,7 +14,6 @@ if(isset($_SESSION['Username'])) { // if user is logged in
         ?>
         <h2 class='text-center mt-5'>Manage Members</h2>
         <div class="container-fluid members-table text-center">
-            <div class="clearfix"></div>
             <div class="table-responsive mt-5 mb-3">
                 <table class="users-table table table-striped table-hover">
                     <tr>
@@ -179,7 +178,7 @@ if(isset($_SESSION['Username'])) { // if user is logged in
                 $accountRank = $_POST['accountRank'];
                 $stmt = $con->prepare("INSERT INTO users (`username`, `password`, `email`, `firstName`, `lastName`, `groupID`, `regDate`) VALUES (?, ?, ?, ?, ?, ?, now());");
                 $stmt->execute(array($Username, $Password, $Email, $Firstname, $Lastname, $accountRank));
-                redirectPage("Account [" . $Username . "] added successfully!", 'success', 'members.php', 2);
+                redirectPage("Account [" . $Username . "] added successfully!", 'success', 'members.php', 1);
             }
         }
      } else if ($do == "edit") { ?>
@@ -261,7 +260,7 @@ if(isset($_SESSION['Username'])) { // if user is logged in
                     <?php
                 }
             } else {
-                redirectPage("User Doesn't Exist", "error", 'members.php',1);
+                redirectPage("User Doesn't Exist", "error", 'members.php',1, false);
             }
         } else {
             header('location:members.php');
@@ -300,7 +299,7 @@ if(isset($_SESSION['Username'])) { // if user is logged in
                 $newHashedPassword = empty($_POST['password']) ?  $_POST['currentpassword'] : sha1($_POST['password']);
                 $stmt = $con->prepare("UPDATE users SET email = ? , firstName = ? , lastName = ? , password = ? WHERE userID = ?;");
                 $stmt->execute(array($newEmail, $newFirstname, $newLastname, $newHashedPassword, $id));
-                redirectPage("Updated Successfully, [" . $stmt->rowCount() . "] rows affected","success", "", 0.5);
+                redirectPage("Updated Successfully, [" . $stmt->rowCount() . "] rows affected","success", "", 0.5, false);
             } else {
                 header("refresh:1;url=" . $_SERVER['HTTP_REFERER']);
                 exit();

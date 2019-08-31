@@ -13,5 +13,6 @@
     include $tpl . "header.inc";
     // To Put navbar in specific pages
     function addNavBar() {
+        global $activeClass;
         include "includes/templates/navbar.inc";
     }

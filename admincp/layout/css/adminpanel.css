@@ -17,7 +17,7 @@ body {
 
 /*  Start Login Form */
 .admin-cp-login {
-  width: 50%;
+  /* width: 50%; */
   margin: 100px auto;
   padding: 30px;
   background: #e6e6e6;
@@ -32,9 +32,19 @@ body {
 
 .admin-cp-login fieldset legend {
   width: auto;
+  margin:0 auto;
   border: 1.5px solid rgba(0, 0, 0, 0.35);
   padding: 8px 20px;
   color: #696b71;
+}
+
+@media (max-width:575px) {
+  .admin-cp-login {
+    padding: 10px;
+  }
+  .admin-cp-login fieldset {
+    padding:20px 10px;
+  }
 }
 
 .admin-cp-login input:not(:first-child) {
@@ -49,20 +59,28 @@ body {
 
 /*  Admin Navbar Start */
 
+.admin-navbar {
+  padding-top:0;
+  padding-bottom:0;
+}
+
 .admin-navbar .navbar-brand {
   margin-right: 70px;
 }
 
 .admin-navbar.navbar-dark .navbar-nav .nav-item {
-  padding: 0 10px;
+  padding:0;
+  margin-right:3px;
 }
 
 .admin-navbar.navbar-dark .navbar-nav .nav-link {
   transition: all 0.5s ease-in-out;
+  display:inline-block;
+  padding:15px 20px;
   letter-spacing: 1.2px;
 }
 
-.admin-navbar.navbar-dark .navbar-nav .nav-link:hover {
+.admin-navbar.navbar-dark .navbar-nav .nav-link:hover, .admin-navbar.navbar-dark .navbar-nav .nav-link.active{
   background: #4e4e4e;
 }
 
@@ -115,6 +133,22 @@ body {
 
 .latest-user:nth-of-type(odd) {
   background:rgba(0,0,0,.05);
+}
+
+.cat-visible {
+  color:#28a745;
+}
+
+.cat-invisible {
+  color:#dc3545;
+}
+
+.sorting {
+  font-weight:500;
+}
+
+.sorting.active {
+  color:#dc3545;
 }
 
 /*  Dashboard End */

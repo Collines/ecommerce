@@ -1,28 +1,25 @@
 <nav class="admin-navbar navbar navbar-expand-lg bg-dark navbar-dark">
-    <a class="navbar-brand ml-lg-5" href="index.php"><?php echo lang("ADMIN_LOGO")?></a>
+    <a class="navbar-brand ml-lg-5" href="dashboard.php"><?php echo lang("ADMIN_LOGO")?></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#admincp-navbar" aria-controls="admincp-navbar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="admincp-navbar">
         <ul class="navbar-nav mr-auto">
-<!--            <li class="nav-item active">-->
-<!--                <a class="nav-link" href="#"> --><?php //echo lang("ADMIN_HOME")?><!--</a>-->
-<!--            </li>-->
             <li class="nav-item">
-                <a class="nav-link" href="#"><?php echo lang("ADMIN_CATEGORIES")?></a>
+                <a class="nav-link <?php echo printActiveLink('categories.php') ?>" href="categories.php"><?php echo lang("ADMIN_CATEGORIES")?></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><?php echo lang("ADMIN_ITEMS")?></a>
+                <a class="nav-link <?php echo printActiveLink() ?>" href="#"><?php echo lang("ADMIN_ITEMS")?></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="members.php"><?php echo lang("ADMIN_MEMBERS")?></a>
+                <a class="nav-link <?php echo printActiveLink('members.php') ?>" href="members.php"><?php echo lang("ADMIN_MEMBERS")?></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><?php echo lang("ADMIN_STATISTICS")?></a>
+                <a class="nav-link <?php echo printActiveLink('') ?>" href="#"><?php echo lang("ADMIN_STATISTICS")?></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><?php echo lang("ADMIN_LOGS")?></a>
+                <a class="nav-link <?php echo printActiveLink() ?>" href="#"><?php echo lang("ADMIN_LOGS")?></a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">

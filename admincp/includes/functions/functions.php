@@ -20,12 +20,14 @@
     }
 
     // Page Redirect Handler
-    function redirectPage($msg, $type, $page=NULL, $seconds=1.05) {
+    function redirectPage($msg, $type, $page=NULL, $seconds=1.05, $showRedirectMsg = true) {
         if($page === NULL || $page == "") {
             $page = $_SERVER['HTTP_REFERER'];
         }
         outputMessage($type, $msg);
-        outputMessage($type, "You'll be redirected in $seconds Seconds...");
+        if($showRedirectMsg){
+            outputMessage($type, "You'll be redirected in $seconds Seconds...");
+        }
         header("refresh:$seconds;url=$page",true,301);
         exit();
     }
@@ -58,4 +60,8 @@
         $stmt->execute();
         $rows = $stmt->fetchAll();
         return $rows;
+    }
+
+    function printActiveLink($route) {
+        return strpos($_SERVER['REQUEST_URI'], $route) !== false ? 'active' : '';
     }
