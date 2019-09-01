@@ -112,7 +112,7 @@ if(isset($_SESSION['Username'])) {
             <div class="form-group row">
                 <label for="visibility" class="offset-sm-2 col-sm-2 col-form-label col-form-label-lg">Visibility</label>
                 <div class="col-sm-8" >
-                    <select name="visibility" id="visibility" class="custom-select custom-select-lg">
+                    <select name="visibility" id="visibility" class=" ">
                         <option value="1" selected>Visible</option>
                         <option value="0">Invisible</option>
                     </select>
@@ -121,7 +121,7 @@ if(isset($_SESSION['Username'])) {
             <div class="form-group row">
                 <label for="ads" class="offset-sm-2 col-sm-2 col-form-label col-form-label-lg">Allow Ads</label>
                 <div class="col-sm-8" >
-                    <select name="allowads" id="ads" class="custom-select custom-select-lg">
+                    <select name="allowads" id="ads" >
                         <option value="1" selected>Yes</option>
                         <option value="0">No, Don't allow Ads</option>
                     </select>
@@ -238,7 +238,7 @@ if(isset($_SESSION['Username'])) {
                         <div class="form-group row">
                             <label for="visibility" class="offset-sm-2 col-sm-2 col-form-label col-form-label-lg">Visibility</label>
                             <div class="col-sm-8" >
-                                <select name="visibility" id="visibility" class="custom-select custom-select-lg">
+                                <select name="visibility" id="visibility" class="">
                                     <?php
                                         if($catVisibility == 1) {
                                             echo "<option value='1' selected>Visible</option>
@@ -254,7 +254,7 @@ if(isset($_SESSION['Username'])) {
                         <div class="form-group row">
                             <label for="ads" class="offset-sm-2 col-sm-2 col-form-label col-form-label-lg">Allow Ads</label>
                             <div class="col-sm-8" >
-                                <select name="allowads" id="ads" class="custom-select custom-select-lg">
+                                <select name="allowads" id="ads" class="">
                                     <?php
                                         if($catAds == 1) {
                                             echo "<option value='1' selected>Yes</option>
@@ -282,8 +282,6 @@ if(isset($_SESSION['Username'])) {
         } else {
             redirectPage('Redirecting...','error', 'categories.php', 1.5,false);
         }
-
-    } else if ($do == 'update') {
 
     } else if ($do == 'delete') {
         if(isset($_GET['CategoryID']) && is_numeric($_GET['CategoryID'])) {
@@ -324,11 +322,11 @@ if(isset($_SESSION['Username'])) {
                         <?php
                     }
                 } else {
-                    redirectPage("User doesn't exist", "error", 'members.php');
+                    redirectPage("Category doesn't exist", "error", 'categories.php');
                 }
             }
         } else {
-            redirectPage("You can't access this page directly", 'error', 'members.php');
+            redirectPage("You can't access this page directly", 'error', 'categories.php');
         }
     }
 

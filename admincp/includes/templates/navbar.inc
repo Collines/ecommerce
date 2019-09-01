@@ -10,7 +10,7 @@
                 <a class="nav-link <?php echo printActiveLink('categories.php') ?>" href="categories.php"><?php echo lang("ADMIN_CATEGORIES")?></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?php echo printActiveLink() ?>" href="#"><?php echo lang("ADMIN_ITEMS")?></a>
+                <a class="nav-link <?php echo printActiveLink('items.php') ?>" href="items.php"><?php echo lang("ADMIN_ITEMS")?></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link <?php echo printActiveLink('members.php') ?>" href="members.php"><?php echo lang("ADMIN_MEMBERS")?></a>

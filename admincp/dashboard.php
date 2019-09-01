@@ -25,18 +25,18 @@ if(isset($_SESSION['Username'])) {
                     <span><?php echo countItems('groupid', 'users',true,"groupid = 0"); ?></span>
                 </div>
             </a>
-            <div class="col-md-3">
+            <a class="col-md-3 d-block" href="items.php">
                 <div class="stat total-items">
                     Total Items
-                    <span>1834</span>
+                    <span><?php echo countItems('itemid', 'items'); ?></span>
                 </div>
-            </div>
-            <div class="col-md-3">
+            </a>
+            <a class="col-md-3 d-block" href="categories.php">
                 <div class="stat total-categories">
                     Categories
-                    <span>14</span>
+                    <span><?php echo countItems('id', 'categories'); ?></span>
                 </div>
-            </div>
+            </a>
         </div>
         <div class="row mt-5">
             <div class="col-md-6 mb-4">
