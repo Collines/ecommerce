@@ -11,7 +11,7 @@ My First coded full site (front & back) ends
 - MySQL
 
 ## Live Demo based on latest commit (updated on new commits)
-http://ecommerce-site.byethost4.com/admincp
+http://104.244.79.130/admincp (updated on 2nd of Sept 2019)
 
 ---
 more to be added..
