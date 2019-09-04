@@ -12,6 +12,8 @@ My First coded full site (front & back) ends
 
 ## Live Demo based on latest commit (updated on new commits)
 http://104.244.79.130/admincp (updated on 2nd of Sept 2019)
+user: admin
+pw: admin
 
 ---
 more to be added..
